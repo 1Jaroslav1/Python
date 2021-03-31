@@ -1,4 +1,4 @@
-from functions_with_data import write_to_json_file, read_json_file
+from functions_with_data import write_to_file, read_file
 
 
 """
@@ -74,11 +74,11 @@ class Vector:
         """
         записує елементи вектора до файла з силскою path
         """
-        write_to_json_file(path, self.values)
+        write_to_file(path, self.values)
     
     def read_from_file(self, path):
         """
         зчитує елементи вектора з файла з силскою path
         """
-        self.values = read_json_file(path)
+        self.values = read_file(path)
 
