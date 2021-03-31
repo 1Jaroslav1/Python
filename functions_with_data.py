@@ -14,10 +14,14 @@
 
 def read_file(file):
     with open(file, 'r') as file_handle:
-        data = file_handle.readline()  
-    return data
+        data = file_handle.readline()
+        array = list(map(int, data.split()))
+    return array
 
 
 def write_to_file(file, data):
     with open(file, 'w') as file_handle:
-        file_handle.write(data)
+        s = ""
+        for elem in data:
+            s += str(elem) + ' '
+        file_handle.write(s)
