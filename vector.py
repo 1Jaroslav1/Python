@@ -9,8 +9,14 @@ class SizeError(Exception):
     pass
 
 class Vector:
-    def __init__(self, n):
-        self.values = [0]*n
+    def __init__(self, n, array=[]):
+        if len(array) == 0:
+            self.values = [0]*n
+        else:
+            if n == len(array):
+                self.values = array
+            else:
+                raise SizeError
 
     def get_values(self):
         return self.values
